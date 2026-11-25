@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LockLyrics</title>
+<meta name="description" content="Synced lyrics for whatever you play on your Mac, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root { --bg: #0b0714; --fg: #f4f0fa; --dim: #b3a9c6; --accent: #ff5f9e; --card: #171026; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 64px 16px 80px; }
+  header { text-align: center; }
+  header img { width: 128px; height: 128px; }
+  h1 { font-size: clamp(40px, 7vw, 64px); margin: 12px 0 8px; letter-spacing: -0.02em; }
+  .lead { color: var(--dim); font-size: 20px; max-width: 640px; margin: 0 auto 28px; }
+  .btn { display: inline-block; background: var(--accent); color: #1a0612; font-weight: 700; text-decoration: none; padding: 14px 28px; border-radius: 999px; }
+  .note { color: var(--dim); font-size: 14px; margin-top: 12px; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 56px 0; }
+  .shots img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 14px; display: block; }
+  .shots figcaption { color: var(--dim); font-size: 14px; margin-top: 6px; }
+  figure { margin: 0; }
+  h2 { font-size: 26px; margin: 48px 0 12px; }
+  ul { padding-left: 20px; } li { margin: 6px 0; }
+  .card { background: var(--card); border-radius: 16px; padding: 20px 24px; }
+  code { background: #ffffff14; padding: 2px 6px; border-radius: 6px; }
+  footer { color: var(--dim); font-size: 14px; margin-top: 56px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="img/icon.png" alt="LockLyrics icon">
+    <h1>LockLyrics</h1>
+    <p class="lead">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
+    <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest">Download for Mac</a>
+    <p class="note">Free · macOS 14 or later · Apple Silicon and Intel</p>
+  </header>
+
+  <section class="shots">
+    <figure><img src="img/synthwave.jpg" alt="Synthwave scene: wireframe hills under a striped sun"><figcaption>Synthwave</figcaption></figure>
+    <figure><img src="img/aurora.jpg" alt="Aurora scene: curtains of light mirrored in a sea of glowing lines"><figcaption>Aurora</figcaption></figure>
+    <figure><img src="img/orbit.jpg" alt="Orbit scene: a ringed planet in deep blue space"><figcaption>Orbit</figcaption></figure>
+    <figure><img src="img/tunnel.jpg" alt="Tunnel scene: a corridor of pastel tiles"><figcaption>Tunnel</figcaption></figure>
+  </section>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Plays along with Apple Music, Spotify, and YouTube or Spotify in a browser: no setup per song.</li>
+    <li>Lyrics on the lock screen, as a live desktop wallpaper, or in a full-screen player.</li>
+    <li>Ten 3D scenes and 23 lyric styles that react to the beat, the bass and every sung word.</li>
+    <li>A frame light around the screen in time with the music.</li>
+    <li>When a song starts, a small card offers the lyrics.</li>
+  </ul>
+
+  <h2>Install</h2>
+  <div class="card">
+    <ol>
+      <li>Open <b>LockLyrics.dmg</b> and drag LockLyrics into Applications.</li>
+      <li>The first time, right-click LockLyrics in Applications and choose <b>Open</b> (it is not notarized by Apple yet), or allow it in System Settings → Privacy &amp; Security → <b>Open Anyway</b>.</li>
+      <li>The welcome page asks for what it needs, one button each: your music players, the sound your Mac plays (for the beat), and Open at login.</li>
+    </ol>
+  </div>
+
+  <h2>Privacy</h2>
+  <p>The playing song's title and artist are sent to lyric and artwork services (LRCLIB, NetEase, the iTunes Search API, TheAudioDB, Deezer) to find its lyrics and pictures. The sound is analysed on your Mac for the beat and never recorded or sent. No accounts, no analytics, no tracking.</p>
+
+  <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers.</footer>
+</main>
+</body>
+</html>
