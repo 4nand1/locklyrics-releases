@@ -25,6 +25,12 @@
   ul { padding-left: 20px; } li { margin: 6px 0; }
   .card { background: var(--card); border-radius: 16px; padding: 20px 24px; }
   code { background: #ffffff14; padding: 2px 6px; border-radius: 6px; }
+  .hero { margin: 40px auto 0; max-width: 980px; }
+  .hero img, .mac img { width: 100%; height: auto; display: block; }
+  .looks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px 20px; margin-top: 20px; }
+  .mac figcaption { margin-top: 4px; font-size: 15px; } .mac figcaption b { display: block; }
+  .mac figcaption span { color: var(--dim); font-size: 14px; }
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 20px; align-items: start; }
   footer { color: var(--dim); font-size: 14px; margin-top: 56px; text-align: center; }
   a { color: var(--accent); }
 </style>
@@ -37,13 +43,24 @@
     <p class="lead">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
     <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest">Download for Mac</a>
     <p class="note">Free · macOS 14 or later · Apple Silicon and Intel</p>
+    <div class="hero"><img src="img/mac-nightdrive.jpg" alt="LockLyrics on a MacBook: the Night drive look, a sung word over wireframe hills under the song's cover as the sun" width="1600" height="1000"></div>
   </header>
 
-  <section class="shots">
-    <figure><img src="img/synthwave.jpg" alt="Synthwave scene: wireframe hills under a striped sun"><figcaption>Synthwave</figcaption></figure>
-    <figure><img src="img/aurora.jpg" alt="Aurora scene: curtains of light mirrored in a sea of glowing lines"><figcaption>Aurora</figcaption></figure>
-    <figure><img src="img/orbit.jpg" alt="Orbit scene: a ringed planet in deep blue space"><figcaption>Orbit</figcaption></figure>
-    <figure><img src="img/tunnel.jpg" alt="Tunnel scene: a corridor of pastel tiles"><figcaption>Tunnel</figcaption></figure>
+  <h2>Seven ready-made looks</h2>
+  <p style="color:var(--dim);margin-top:0">One click each, on the lock screen, the full-screen player and the desktop. Any of the ten scenes goes behind any of the 23 lyric styles too.</p>
+  <section class="looks">
+    <figure class="mac"><img loading="lazy" src="img/mac-hologram.jpg" alt="Hologram look"><figcaption><b>Hologram</b><span>A floating sea of light, one huge word</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-saturn.jpg" alt="Saturn look"><figcaption><b>Saturn</b><span>The cover as a ringed planet, the verse as a constellation</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-aurora.jpg" alt="Northern lights look"><figcaption><b>Northern lights</b><span>Curtains of light mirrored in a glowing sea</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-embers.jpg" alt="Embers look"><figcaption><b>Embers</b><span>A field of voxels, veins glowing in the song's color</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-poster.jpg" alt="Poster look"><figcaption><b>Poster</b><span>The screen in vivid color, one slanted word</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-stickers.jpg" alt="Stickers look"><figcaption><b>Stickers</b><span>The last words as die-cut stickers</span></figcaption></figure>
+  </section>
+
+  <h2>On your desktop, too</h2>
+  <section class="pair">
+    <figure class="mac"><img loading="lazy" src="img/mac-skin.jpg" alt="The desktop as a music wallpaper"><figcaption><b>A music wallpaper</b><span>While a song plays, the desktop shows its lyrics, the song with a spectrum ring, recently played and search.</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-card.jpg" alt="A small card offering the lyrics"><figcaption><b>Lyrics when a song starts</b><span>Start a song anywhere and a small card offers the lyrics. It never takes focus and fades by itself.</span></figcaption></figure>
   </section>
 
   <h2>What it does</h2>
@@ -67,7 +84,7 @@
   <h2>Privacy</h2>
   <p>The playing song's title and artist are sent to lyric and artwork services (LRCLIB, NetEase, the iTunes Search API, TheAudioDB, Deezer) to find its lyrics and pictures. The sound is analysed on your Mac for the beat and never recorded or sent. No accounts, no analytics, no tracking.</p>
 
-  <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers.</footer>
+  <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers. The song in these pictures, "Midnight Signal" by Nova Lane, is made up for them.</footer>
 </main>
 </body>
 </html>
