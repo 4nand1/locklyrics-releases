@@ -6,6 +6,11 @@
 <title>LockLyrics</title>
 <meta name="description" content="Synced lyrics for whatever you play on your Mac, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.">
 <link rel="icon" href="img/icon.png">
+<meta property="og:title" content="LockLyrics for Mac">
+<meta property="og:description" content="Synced lyrics for whatever you play, on the lock screen, the desktop or full screen, over 3D scenes that move with the music. Free.">
+<meta property="og:image" content="https://4nand1.github.io/locklyrics-releases/img/mac-nightdrive.jpg">
+<meta property="og:url" content="https://4nand1.github.io/locklyrics-releases/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg: #0b0714; --fg: #f4f0fa; --dim: #b3a9c6; --accent: #ff5f9e; --card: #171026; }
   * { box-sizing: border-box; }
@@ -41,8 +46,8 @@
     <img src="img/icon.png" alt="LockLyrics icon">
     <h1>LockLyrics</h1>
     <p class="lead">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
-    <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest">Download for Mac</a>
-    <p class="note">Free · macOS 14 or later · Apple Silicon and Intel</p>
+    <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest/download/LockLyrics.dmg">Download for Mac</a>
+    <p class="note">Free · version <span id="ver">1.1</span> · 5 MB · macOS 14 or later · Apple Silicon and Intel · <a href="https://github.com/4nand1/locklyrics-releases/releases">all versions</a></p>
     <div class="hero"><img src="img/mac-nightdrive.jpg" alt="LockLyrics on a MacBook: the Night drive look, a sung word over wireframe hills under the song's cover as the sun" width="1600" height="1000"></div>
   </header>
 
@@ -75,9 +80,11 @@
   <h2>Install</h2>
   <div class="card">
     <ol>
-      <li>Open <b>LockLyrics.dmg</b> and drag LockLyrics into Applications.</li>
-      <li>The first time, right-click LockLyrics in Applications and choose <b>Open</b> (it is not notarized by Apple yet), or allow it in System Settings → Privacy &amp; Security → <b>Open Anyway</b>.</li>
-      <li>The welcome page asks for what it needs, one button each: your music players, the sound your Mac plays (for the beat), and Open at login.</li>
+      <li>Open <b>LockLyrics.dmg</b> from Downloads and drag LockLyrics onto the <b>Applications</b> folder beside it.</li>
+      <li>Open LockLyrics from Applications. LockLyrics is not notarized by Apple yet, so macOS stops it the first time: click <b>Done</b>, open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to LockLyrics, then confirm. You only do this once.
+        <br><span style="color:var(--dim);font-size:15px">On macOS 14 you can instead right-click LockLyrics in Applications and choose Open.</span></li>
+      <li>The welcome page asks for what it needs, one button each: your music players, the sound your Mac plays (for the beat) and Open at login.</li>
+      <li>Play a song. LockLyrics lives in the menu bar (the music-note icon at the top right of the screen): open it there for the full-screen player and the settings. Lock your Mac to see the lyrics on the lock screen.</li>
     </ol>
   </div>
 
@@ -86,5 +93,13 @@
 
   <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers. The song in these pictures, "Midnight Signal" by Nova Lane, is made up for them.</footer>
 </main>
+<script>
+  fetch("https://api.github.com/repos/4nand1/locklyrics-releases/releases/latest").then(r => r.ok ? r.json() : null).then(j => {
+    if (!j) return;
+    document.getElementById("ver").textContent = j.tag_name.replace(/^v/, "");
+    const dmg = (j.assets || []).find(a => a.name.endsWith(".dmg"));
+    if (dmg) document.getElementById("dl").href = dmg.browser_download_url;
+  }).catch(() => {});
+</script>
 </body>
 </html>
