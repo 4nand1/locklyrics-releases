@@ -38,65 +38,80 @@
   .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 20px; align-items: start; }
   footer { color: var(--dim); font-size: 14px; margin-top: 56px; text-align: center; }
   a { color: var(--accent); }
+  #lang { position: absolute; top: 16px; right: 16px; font: 600 14px/1 inherit; color: var(--fg); background: var(--card); border: 1px solid #ffffff26; border-radius: 999px; padding: 8px 14px; cursor: pointer; }
 </style>
 </head>
 <body>
 <main>
+  <button id="lang" aria-label="Монгол / English">Монгол</button>
   <header>
     <img src="img/icon.png" alt="LockLyrics icon">
     <h1>LockLyrics</h1>
-    <p class="lead">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
-    <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest/download/LockLyrics.dmg">Download for Mac</a>
-    <p class="note">Free · version <span id="ver">1.6</span> · 5 MB · macOS 14 or later · Apple Silicon and Intel · <a href="https://github.com/4nand1/locklyrics-releases/releases">all versions</a></p>
+    <p class="lead" data-mn="Mac дээр тоглуулж буй дууныхаа үгийг дуулахтай зэрэг үг үгээр нь: lock screen, desktop эсвэл бүтэн дэлгэцэн дээр, хөгжмийн хэмнэлээр хөдөлдөг 3D орчны дээр.">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
+    <a class="btn" id="dl" data-mn="Mac-д татах" href="https://github.com/4nand1/locklyrics-releases/releases/latest/download/LockLyrics.dmg">Download for Mac</a>
+    <p class="note" data-mn="Үнэгүй · хувилбар &lt;span id=&quot;ver&quot;&gt;1.6&lt;/span&gt; · 5 MB · macOS 14 ба түүнээс шинэ · Apple Silicon болон Intel · &lt;a href=&quot;https://github.com/4nand1/locklyrics-releases/releases&quot;&gt;бүх хувилбар&lt;/a&gt;">Free · version <span id="ver">1.6</span> · 5 MB · macOS 14 or later · Apple Silicon and Intel · <a href="https://github.com/4nand1/locklyrics-releases/releases">all versions</a></p>
     <div class="hero"><img src="img/mac-nightdrive.jpg" alt="LockLyrics on a MacBook: the Night drive look, a sung word over wireframe hills under the song's cover as the sun" width="1600" height="1000"></div>
   </header>
 
-  <h2>Seven ready-made looks</h2>
-  <p style="color:var(--dim);margin-top:0">One click each, on the lock screen, the full-screen player and the desktop. Any of the ten scenes goes behind any of the 23 lyric styles too.</p>
+  <h2 data-mn="Долоон бэлэн загвар">Seven ready-made looks</h2>
+  <p style="color:var(--dim);margin-top:0" data-mn="Нэг товшилтоор lock screen, бүтэн дэлгэцийн тоглуулагч, desktop дээр. Арван 3D орчны аль нь ч 23 үгийн хэв маягийн аль нь ч ард нь тавигдаж болно.">One click each, on the lock screen, the full-screen player and the desktop. Any of the ten scenes goes behind any of the 23 lyric styles too.</p>
   <section class="looks">
-    <figure class="mac"><img loading="lazy" src="img/mac-hologram.jpg" alt="Hologram look"><figcaption><b>Hologram</b><span>A floating sea of light, one huge word</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-saturn.jpg" alt="Saturn look"><figcaption><b>Saturn</b><span>The cover as a ringed planet, the verse as a constellation</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-aurora.jpg" alt="Northern lights look"><figcaption><b>Northern lights</b><span>Curtains of light mirrored in a glowing sea</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-embers.jpg" alt="Embers look"><figcaption><b>Embers</b><span>A field of voxels, veins glowing in the song's color</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-poster.jpg" alt="Poster look"><figcaption><b>Poster</b><span>The screen in vivid color, one slanted word</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-stickers.jpg" alt="Stickers look"><figcaption><b>Stickers</b><span>The last words as die-cut stickers</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-hologram.jpg" alt="Hologram look"><figcaption data-mn="&lt;b&gt;Hologram&lt;/b&gt;&lt;span&gt;Гэрлийн хөвөгч тэнгис, нэг том үг&lt;/span&gt;"><b>Hologram</b><span>A floating sea of light, one huge word</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-saturn.jpg" alt="Saturn look"><figcaption data-mn="&lt;b&gt;Saturn&lt;/b&gt;&lt;span&gt;Ковер нь цагирагтай гараг, бадаг нь одны ордон&lt;/span&gt;"><b>Saturn</b><span>The cover as a ringed planet, the verse as a constellation</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-aurora.jpg" alt="Northern lights look"><figcaption data-mn="&lt;b&gt;Туйлын туяа&lt;/b&gt;&lt;span&gt;Гэрэлтэх тэнгист тусах гэрлийн хөшиг&lt;/span&gt;"><b>Northern lights</b><span>Curtains of light mirrored in a glowing sea</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-embers.jpg" alt="Embers look"><figcaption data-mn="&lt;b&gt;Цог&lt;/b&gt;&lt;span&gt;Воксел талбай, дууны өнгөөр гэрэлтэх судал&lt;/span&gt;"><b>Embers</b><span>A field of voxels, veins glowing in the song's color</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-poster.jpg" alt="Poster look"><figcaption data-mn="&lt;b&gt;Постер&lt;/b&gt;&lt;span&gt;Тод өнгөөр бүрхэгдсэн дэлгэц, нэг хазгай үг&lt;/span&gt;"><b>Poster</b><span>The screen in vivid color, one slanted word</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-stickers.jpg" alt="Stickers look"><figcaption data-mn="&lt;b&gt;Стикер&lt;/b&gt;&lt;span&gt;Сүүлийн үгс наалт шиг хайчлагдсан&lt;/span&gt;"><b>Stickers</b><span>The last words as die-cut stickers</span></figcaption></figure>
   </section>
 
-  <h2>On your desktop, too</h2>
+  <h2 data-mn="Desktop дээр ч бас">On your desktop, too</h2>
   <section class="pair">
-    <figure class="mac"><img loading="lazy" src="img/mac-skin.jpg" alt="The desktop as a music wallpaper"><figcaption><b>A music wallpaper</b><span>While a song plays, the desktop shows its lyrics, the song with a spectrum ring, recently played and search.</span></figcaption></figure>
-    <figure class="mac"><img loading="lazy" src="img/mac-card.jpg" alt="A small card offering the lyrics"><figcaption><b>Lyrics when a song starts</b><span>Start a song anywhere and a small card offers the lyrics. It never takes focus and fades by itself.</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-skin.jpg" alt="The desktop as a music wallpaper"><figcaption data-mn="&lt;b&gt;Хөгжмийн ханын зураг&lt;/b&gt;&lt;span&gt;Дуу тоглож байхад desktop дээр үг, спектрийн цагирагтай дуу, сүүлд сонссон дуунууд болон хайлт гарна.&lt;/span&gt;"><b>A music wallpaper</b><span>While a song plays, the desktop shows its lyrics, the song with a spectrum ring, recently played and search.</span></figcaption></figure>
+    <figure class="mac"><img loading="lazy" src="img/mac-card.jpg" alt="A small card offering the lyrics"><figcaption data-mn="&lt;b&gt;Дуу эхлэхэд үг нь&lt;/b&gt;&lt;span&gt;Хаана ч дуу эхлүүлэхэд жижиг карт үгийг санал болгоно. Focus авахгүй, өөрөө алга болно.&lt;/span&gt;"><b>Lyrics when a song starts</b><span>Start a song anywhere and a small card offers the lyrics. It never takes focus and fades by itself.</span></figcaption></figure>
   </section>
 
-  <h2>What it does</h2>
+  <h2 data-mn="Юу хийдэг вэ">What it does</h2>
   <ul>
-    <li>Plays along with Apple Music, Spotify, and YouTube or Spotify in a browser: no setup per song.</li>
-    <li>Lyrics on the lock screen, as a live desktop wallpaper, or in a full-screen player.</li>
-    <li>Ten 3D scenes and 23 lyric styles that react to the beat, the bass and every sung word.</li>
-    <li>A frame light around the screen in time with the music.</li>
-    <li>When a song starts, a small card offers the lyrics.</li>
+    <li data-mn="Apple Music, Spotify, хөтөч дээрх YouTube эсвэл Spotify-тай хамт ажиллана: дуу болгонд тохиргоо хийх шаардлагагүй.">Plays along with Apple Music, Spotify, and YouTube or Spotify in a browser: no setup per song.</li>
+    <li data-mn="Дууны үг lock screen дээр, амьд desktop ханын зураг болон бүтэн дэлгэцийн тоглуулагчид.">Lyrics on the lock screen, as a live desktop wallpaper, or in a full-screen player.</li>
+    <li data-mn="Бит, басс, дуулсан үг бүрт хариу үзүүлдэг арван 3D орчин, 23 үгийн хэв маяг.">Ten 3D scenes and 23 lyric styles that react to the beat, the bass and every sung word.</li>
+    <li data-mn="Хөгжмийн хэмнэлээр дэлгэцийн хүрээгээр гүйх гэрэл.">A frame light around the screen in time with the music.</li>
+    <li data-mn="Дуу эхлэхэд жижиг карт үгийг санал болгоно.">When a song starts, a small card offers the lyrics.</li>
+    <li data-mn="&lt;b&gt;Монгол дуу ч ажиллана:&lt;/b&gt; үг олдохгүй бол латин үсгээр дахин хайж, дэлгүүрт ковер байхгүй бол таны Music сангаас авна."><b>Mongolian songs work too:</b> when the lyrics aren't found it tries again in Latin spelling, and takes the cover from your Music library when the store has none.</li>
   </ul>
 
-  <h2>Install</h2>
+  <h2 data-mn="Суулгах">Install</h2>
   <div class="card">
     <ol>
-      <li>Open <b>LockLyrics.dmg</b> from Downloads and drag LockLyrics onto the <b>Applications</b> folder beside it.</li>
-      <li>Open LockLyrics from Applications. LockLyrics is not notarized by Apple yet, so macOS stops it the first time: click <b>Done</b>, open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to LockLyrics, then confirm. You only do this once.
+      <li data-mn="Downloads-аас &lt;b&gt;LockLyrics.dmg&lt;/b&gt;-г нээгээд LockLyrics-ийг хажууд нь байгаа &lt;b&gt;Applications&lt;/b&gt; хавтас руу чирнэ.">Open <b>LockLyrics.dmg</b> from Downloads and drag LockLyrics onto the <b>Applications</b> folder beside it.</li>
+      <li data-mn="LockLyrics-ийг Applications-аас нээнэ. LockLyrics одоогоор Apple-аар notarize хийгдээгүй тул macOS эхний удаа зогсооно: &lt;b&gt;Done&lt;/b&gt; дараад &lt;b&gt;System Settings → Privacy &amp;amp; Security&lt;/b&gt;-г нээж, доош гүйлгээд LockLyrics-ийн хажууд байгаа &lt;b&gt;Open Anyway&lt;/b&gt;-г дарж баталгаажуулна. Үүнийг ганц л удаа хийнэ.&lt;br&gt;&lt;span style=&quot;color:var(--dim);font-size:15px&quot;&gt;macOS 14 дээр оронд нь Applications дотор LockLyrics дээр баруун товч дараад Open сонгож болно.&lt;/span&gt;">Open LockLyrics from Applications. LockLyrics is not notarized by Apple yet, so macOS stops it the first time: click <b>Done</b>, open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to LockLyrics, then confirm. You only do this once.
         <br><span style="color:var(--dim);font-size:15px">On macOS 14 you can instead right-click LockLyrics in Applications and choose Open.</span></li>
-      <li>The welcome page asks for what it needs, one button each: your music players, the sound your Mac plays (for the beat) and Open at login.</li>
-      <li>Play a song. LockLyrics lives in the menu bar (the music-note icon at the top right of the screen): open it there for the full-screen player and the settings. Lock your Mac to see the lyrics on the lock screen.</li>
+      <li data-mn="Welcome хуудас хэрэгтэй зүйлсээ тус бүр нэг товчоор асууна: хөгжим тоглуулагчид, Mac-ын гаргаж буй дуу (битэд зориулж), Open at login.">The welcome page asks for what it needs, one button each: your music players, the sound your Mac plays (for the beat) and Open at login.</li>
+      <li data-mn="Дуу тоглуул. LockLyrics menu bar-т байрладаг (дэлгэцийн баруун дээд буланд байгаа нотны дүрс): бүтэн дэлгэцийн тоглуулагч, тохиргоог тэндээс нээнэ. Lock screen дээрх үгийг харахын тулд Mac-аа түгж.">Play a song. LockLyrics lives in the menu bar (the music-note icon at the top right of the screen): open it there for the full-screen player and the settings. Lock your Mac to see the lyrics on the lock screen.</li>
     </ol>
   </div>
 
-  <h2>Privacy</h2>
-  <p>The playing song's title and artist are sent to lyric and artwork services (LRCLIB, NetEase, the iTunes Search API, TheAudioDB, Deezer) to find its lyrics and pictures. The sound is analysed on your Mac for the beat and never recorded or sent. The lyrics and covers of songs you play are kept on your Mac so they show at once next time; Settings clears them. No accounts, no analytics, no tracking.</p>
+  <h2 data-mn="Нууцлал">Privacy</h2>
+  <p data-mn="Үг болон зургийг олохын тулд тоглож буй дууны нэр, уран бүтээлчийг үг, зургийн үйлчилгээ рүү (LRCLIB, NetEase, iTunes Search API, TheAudioDB, Deezer) илгээнэ. Дууны дохиог битийг олохын тулд Mac дээр чинь шинжилдэг, хэзээ ч бичиж авахгүй, илгээхгүй. Тоглуулсан дуунуудын үг, ковер дараагийн удаа шууд гарахын тулд Mac дээр хадгалагдана; Settings-ээс устгаж болно. Бүртгэл, analytics, хяналт байхгүй.">The playing song's title and artist are sent to lyric and artwork services (LRCLIB, NetEase, the iTunes Search API, TheAudioDB, Deezer) to find its lyrics and pictures. The sound is analysed on your Mac for the beat and never recorded or sent. The lyrics and covers of songs you play are kept on your Mac so they show at once next time; Settings clears them. No accounts, no analytics, no tracking.</p>
 
-  <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers. The song in these pictures, "Midnight Signal" by Nova Lane, is made up for them.</footer>
+  <footer data-mn="LockLyrics by 4nand1 · Дууны үг нь зохиогч, хэвлэн нийтлэгчдийнх. Эдгээр зурган дээрх &quot;Midnight Signal&quot; by Nova Lane дуу нь зохиомол.">LockLyrics by 4nand1 · Lyrics belong to their writers and publishers. The song in these pictures, "Midnight Signal" by Nova Lane, is made up for them.</footer>
 </main>
 <script>
+  // English / Mongolian: each translated element keeps its Mongolian HTML in data-mn
+  const tr = [...document.querySelectorAll("[data-mn]")]; tr.forEach(e => e.dataset.en = e.innerHTML);
+  let ver = null, lang = "en";
+  function setLang(l) {
+    lang = l; tr.forEach(e => e.innerHTML = e.dataset[l]); document.documentElement.lang = l;
+    document.getElementById("lang").textContent = l === "mn" ? "English" : "Монгол";
+    if (ver) document.getElementById("ver").textContent = ver;
+    try { localStorage.lang = l; } catch (e) {}
+  }
+  let saved = null; try { saved = localStorage.lang; } catch (e) {}
+  if ((saved || (navigator.language || "").slice(0, 2)) === "mn") setLang("mn");
+  document.getElementById("lang").onclick = () => setLang(lang === "mn" ? "en" : "mn");
   fetch("https://api.github.com/repos/4nand1/locklyrics-releases/releases/latest").then(r => r.ok ? r.json() : null).then(j => {
     if (!j) return;
-    document.getElementById("ver").textContent = j.tag_name.replace(/^v/, "");
+    ver = j.tag_name.replace(/^v/, ""); document.getElementById("ver").textContent = ver;
     const dmg = (j.assets || []).find(a => a.name.endsWith(".dmg"));
     if (dmg) document.getElementById("dl").href = dmg.browser_download_url;
   }).catch(() => {});
