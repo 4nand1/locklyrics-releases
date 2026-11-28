@@ -38,6 +38,10 @@
   .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin-top: 20px; align-items: start; }
   footer { color: var(--dim); font-size: 14px; margin-top: 56px; text-align: center; }
   a { color: var(--accent); }
+  .phone { display: none; }
+  body.not-mac .phone { display: block; } body.not-mac #dl { display: none; }
+  .phone p { margin: 0 auto 14px; max-width: 420px; }
+  .phone button { font: inherit; border: 0; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -46,6 +50,11 @@
     <img src="img/icon.png" alt="LockLyrics icon">
     <h1>LockLyrics</h1>
     <p class="lead">Synced lyrics for whatever you play on your Mac, word by word, on the lock screen, the desktop or full screen, over 3D scenes that move with the music.</p>
+    <div class="phone">
+      <p>LockLyrics runs on a Mac. Send this page to your Mac and download it there.</p>
+      <button class="btn" id="send">Send the link to my Mac</button>
+      <p class="note" id="sent" hidden>Link copied. Paste it into Notes, Messages or an email to yourself, then open it on your Mac.</p>
+    </div>
     <a class="btn" id="dl" href="https://github.com/4nand1/locklyrics-releases/releases/latest/download/LockLyrics.dmg">Download for Mac</a>
     <p class="note">Free · version <span id="ver">1.6</span> · 5 MB · macOS 14 or later · Apple Silicon and Intel · <a href="https://github.com/4nand1/locklyrics-releases/releases">all versions</a></p>
     <div class="hero"><img src="img/mac-nightdrive.jpg" alt="LockLyrics on a MacBook: the Night drive look, a sung word over wireframe hills under the song's cover as the sun" width="1600" height="1000"></div>
@@ -94,6 +103,14 @@
   <footer>LockLyrics by 4nand1 · Lyrics belong to their writers and publishers. The song in these pictures, "Midnight Signal" by Nova Lane, is made up for them.</footer>
 </main>
 <script>
+  // ponytail: a phone or iPad can't run the app (iPadOS also says "Macintosh", but has touch points)
+  if (!/Macintosh/.test(navigator.userAgent) || navigator.maxTouchPoints > 1) document.body.classList.add("not-mac");
+  document.getElementById("send").onclick = async () => {
+    const url = "https://4nand1.github.io/locklyrics-releases/";
+    if (navigator.share) { try { await navigator.share({ title: "LockLyrics for Mac", url }); return; } catch (e) { if (e.name === "AbortError") return; } }
+    try { await navigator.clipboard.writeText(url); } catch (e) { prompt("Copy this link:", url); return; }
+    document.getElementById("sent").hidden = false;
+  };
   fetch("https://api.github.com/repos/4nand1/locklyrics-releases/releases/latest").then(r => r.ok ? r.json() : null).then(j => {
     if (!j) return;
     document.getElementById("ver").textContent = j.tag_name.replace(/^v/, "");
